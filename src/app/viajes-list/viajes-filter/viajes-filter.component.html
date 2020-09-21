@@ -1,1 +1,13 @@
-<p>viajes-filter works!</p>
+<div>
+    <form #f=ngForm (ngSubmit)="buscar(f.value)">
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" name="nombre">
+        </div>
+        <div>
+            <label for="">Estado</label>
+            <select name="estado" id=""></select>
+            
+        </div>
+    </form>
+</div>

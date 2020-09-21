@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viajes-filter.component.scss']
 })
 export class ViajesFilterComponent implements OnInit {
+Input() estados: IdName[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
+buscar(value: any): void{
 
+}
 }
