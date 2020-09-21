@@ -1,1 +1,31 @@
-<p>viajes-grid works!</p>
+<div class="grid">
+    <h4>{{ viajes.length  }} / {{ total }}</h4>
+    <div class="table-container">
+        <table width="100%">
+            <thead>
+                <th>Nombre</th>
+                <th>Duracion</th>
+                <th>Destino</th>
+                <th>Nº plazas</th>
+                <th>Estado</th>
+                <th>Rating</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of viajes;">
+                    <tr>
+                        <td>{{item.nombre }}</td>
+                        <td>{{item.duracion }}</td>
+                        <td>{{item.destino }}</td>
+                        <td>{{item.plazas }}</td>
+                        <td> {{item.estado | viajeEstado}}</td>
+                        <td> {{item.rating}}</td>
+                        <td class="buttons">
+                            <span title="Borrar Viaje" (click)="borrar.emit(item)" class="fa fa-trash"></span>
+                            <span title="Editar Viaje" (click)="editar.emit(item)" class="fa fa-edit"></span>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<div>
+    <form [formGroup]="elFormulario" (ngSubmit)="guardar(elFormulario.value)">
+        <div class="row">
+            <img [src]="elFormulario.controls.img.value" />
+            <div class="field-element">
+                <label for="">Nombre</label>
+                <input [ngClass]="{'error': submit && !elFormulario.controls.nombre.valid}" type="text" formControlName="nombre">
+            </div>
+            <div class="field-element">
+                <label for="">Destino</label>
+                <input [ngClass]="{'error': submit && !elFormulario.controls.destino.valid}" type="text" formControlName="destino">
+            </div>
+            <div class="field-element">
+                <label for="">Tipo</label>
+                <input [ngClass]="{'error': submit && !elFormulario.controls.tipo.valid}" type="text" formControlName="tipo">
+            </div>
+            <div class="field-element">
+                <label for="">Duracion</label>
+                <input [ngClass]="{'error': submit && !elFormulario.controls.duracion.valid}" type="number" formControlName="duracion">
+            </div>
+            <div class="field-element">
+                <label for="">Plazas</label>
+                <input [ngClass]="{'error': submit && !elFormulario.controls.plazas.valid}" type="number" formControlName="plazas">
+            </div>
+            <div class="field-element">
+                <label for="">Color</label>
+                <input [ngClass]="{'error': submit && !elFormulario.controls.color.valid}" type="color" formControlName="color">
+            </div>
+            <div class="field-element">
+                <label for="">Estado</label>
+                <select formControlName="estado" [ngClass]="{'error': submit && !elFormulario.controls.estado.valid}">
+                    <option [value]="item.id" *ngFor="let item of estados">{{item.name}}</option>
+                </select>
+            </div>
+            <div class="field-element">
+                <label for="">Rating</label>
+                <select formControlName="rating" [ngClass]="{'error': submit && !elFormulario.controls.rating.valid}">
+                    <option [value]="item" *ngFor="let item of ratingValues">{{item}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row-reverse">
+            <button class="btn primary"> Guardar</button>
+            <button class="btn" type="button" (click)="nuevoViaje()">Nuevo Viaje</button>
+        </div>
+    </form>
+</div>

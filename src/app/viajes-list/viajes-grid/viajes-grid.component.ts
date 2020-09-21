@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ViajeListItem } from 'src/app/models';
 
 @Component({
   selector: 'app-viajes-grid',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viajes-grid.component.scss']
 })
 export class ViajesGridComponent implements OnInit {
+
+  @Input() viajes: ViajeListItem[] = [];
+  @Input() total: number;
+  @Output() editar = new EventEmitter<ViajeListItem>();
+  @Output() borrar = new EventEmitter<ViajeListItem>();
 
   constructor() { }
 

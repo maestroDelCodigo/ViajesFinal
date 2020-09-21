@@ -1,6 +1,6 @@
-import { ViajeEstado } from "./enum";
+import { ViajeEstado } from './enums';
 
-export interface ViajeFilter{
+export interface ViajeFilter {
     nombre: string;
     estado: ViajeEstado;
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "viajesFinal": {
+    "viajes-plus": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/viajesFinal",
+            "outputPath": "dist/viajes-plus",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -66,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "viajesFinal:build"
+            "browserTarget": "viajes-plus:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "viajesFinal:build:production"
+              "browserTarget": "viajes-plus:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "viajesFinal:build"
+            "browserTarget": "viajes-plus:build"
           }
         },
         "test": {
@@ -114,15 +115,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "viajesFinal:serve"
+            "devServerTarget": "viajes-plus:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "viajesFinal:serve:production"
+              "devServerTarget": "viajes-plus:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "viajesFinal"
+    }
+  },
+  "defaultProject": "viajes-plus"
 }

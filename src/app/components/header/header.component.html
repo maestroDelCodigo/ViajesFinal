@@ -1,3 +1,16 @@
 <div class="container">
-    <span routerLink="">Inicio</span><span routerLink="/viajes">Listado de Viajes</span><span routerLink="/viajes/detail">Nuevo Viaje</span>
+    <div>
+        <span routerLink="">
+            Inicio
+        </span>
+        <span routerLink="/viajes">
+            Listado
+        </span>
+        <span routerLink="/viajes/detail">
+            Nuevo Viaje
+        </span>
+    </div>
+    <div>
+        <span class="fa fa-sign-out-alt" (click)="logout.emit()"></span>
+    </div>
 </div>

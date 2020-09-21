@@ -1,0 +1,21 @@
+<div class="login-container">
+    <div class="login-card">
+        <h1>Login</h1>
+        <div>
+            <form #f=ngForm (ngSubmit)="login(f.value.user, f.value.password)">
+                <div class="field-element">
+                    <label for="">Usuario</label>
+                    <input type="text" requied name="user" ngModel>
+                </div>
+                <div class="field-element">
+                    <label for="">Password</label>
+                    <input type="password" requied name="password" ngModel>
+                </div>
+                <p *ngIf="error">
+                    Usuario o contraseña incorrecta
+                </p>
+                <button class="btn primary">Login </button>
+            </form>
+        </div>
+    </div>
+</div>

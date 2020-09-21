@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://use.fontawesome.com/releases/v5.13.1/css/all.css");
+@import './variables';
+
+.row {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.row-reverse {
+  display: flex;
+  flex-flow: row-reverse;
+}
+
+.field-element {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-bottom: 5px;
+
+  label {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  input {
+    border: none;
+    height: 32px;
+    border-bottom: 1px solid gray;
+    font-size: 1.1rem;
+    &.ng-dirty {
+      &.ng-invalid {
+        border: 1px solid red;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $green;
+    }
+  }
+
+  select {
+    border: none;
+    height: 32px;
+    border-bottom: 1px solid gray;
+    font-size: 1.1rem;
+    &.ng-dirty {
+      &.ng-invalid {
+        border: 1px solid red !important;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $green;
+    }
+  }
+
+  .error {
+    color: red;
+    border: 1px solid red !important;      
+  }
+}
+
+.btn {
+  width: 200px;
+  margin-right: 20px;
+  height: 34px;
+  background-color: palevioletred;
+  border: none;
+  color: white;
+
+  &.primary {
+    background-color: rgb(51, 78, 199) !important;
+    color: white;
+
+    &:disabled {
+      background-color: gray !important;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+}

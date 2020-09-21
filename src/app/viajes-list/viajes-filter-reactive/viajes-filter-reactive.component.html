@@ -1,1 +1,22 @@
-<p>viajes-filter-reactive works!</p>
+<div>
+    <form [formGroup]="elFormulario" (ngSubmit)="buscarClick(elFormulario.value)">
+        <div class="row">
+
+            <div class="field-element">
+                <label for="">Nombre</label>
+                <input type="text" name="nombre" formControlName="nombre">
+            </div>
+            <div class="field-element">
+                <label for="">Estado</label>
+                <select name="estado" formControlName="estado">
+                    <option></option>
+                    <option *ngFor="let item of estados" [value]="item.id">{{item.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row-reverse">
+            <button class="btn primary">Buscar</button>
+            <button class="btn" type="button" (click)="reset()">Reset</button>
+        </div>
+    </form>
+</div>

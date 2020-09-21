@@ -1,2 +1,5 @@
-<app-viajes-filter></app-viajes-filter>
-<app-viajes-grid></app-viajes-grid>
+<!-- <app-viajes-filter [estados]="estadodDeViaje" (buscar)="filtrarGrid($event)"></app-viajes-filter> -->
+
+<app-loader *ngIf="loading"></app-loader>
+<app-viajes-filter-reactive [estados]="estadodDeViaje" (buscar)="filtrarGrid($event)"></app-viajes-filter-reactive>
+<app-viajes-grid [viajes]="viajesFiltrados" (borrar)="borrar($event)" (editar)="editar($event)"></app-viajes-grid>

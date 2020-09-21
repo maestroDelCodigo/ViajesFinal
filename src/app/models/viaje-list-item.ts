@@ -1,21 +1,22 @@
-export class Viaje {
+import { ViajeEstado } from './enums';
+
+export class ViajeListItem {
     id: string;
     nombre: string;
-    tipo: string;
-    duracion: number;
+    duracion: string;
     destino: string;
-    plazas: number;
+    plazas: string;
+    estado: ViajeEstado;
     rating: number;
 
-    constructor(item?: any){
+    constructor(item?: any) {
         this.id = item?.id || '';
         this.nombre = item?.nombre || '';
-        this.tipo = item?.tipo || '';
         this.duracion = item?.duracion || null;
-        this.destino = item?.destino;
-        this.plazas = item?.plazas || 0 ;
-        this.rating = item?.rating || 0;
-
-
+        this.destino = item?.destino || '';
+        this.plazas = item?.plazas || 0;
+        this.estado = item?.estado ? parseInt(item.estado, 10) :  null;
+        this.rating = item?.rating || null;
     }
+
 }
