@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { IdName } from '../../models/id-name';
 @Component({
   selector: 'app-viajes-filter',
