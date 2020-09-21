@@ -1,5 +1,5 @@
 <div>
-    <form #f=ngForm (ngSubmit)="buscar(f.value)">
+    <form #f=ngForm (ngSubmit)="buscarClick(f.value)">
         <div>
             <label for="">Nombre</label>
             <input type="text" name="nombre">
@@ -7,7 +7,9 @@
         <div>
             <label for="">Estado</label>
             <select name="estado" id=""></select>
-            
+                <option *ngFor="let estado of estados"[value]="estado.id">{{estado.name}}</option>
         </div>
+        <button>Buscar</button>
+        <button>Limpiar formulario</button>
     </form>
 </div>
